@@ -34,14 +34,19 @@ function getCommits(el) {
   req.send();
 }
 
-
+/////////////////////////////////////////////////////////////////////
 //
 // 
 function displayCommits() {
-  const name = el.dataset.repo;
-  const req = new XMLHttpRequest();
-  req.addEventListener('load', showCommits);
-  req.open('GET', 'https://api.github.com/repos/' + name + '/commits');
-  req.send();
+  const commits = JSON.parse(this.responseText);
+  const commitsList = `<ul>${commits.map(commit =>'<li><h3>' + commit.commit.author.name +
+        ' (' +
+        commit.author.login +
+        ')</h3>' +
+        commit.commit.message +
+        '</li>'
+    )
+    .join('')}</ul>`;
+  document.getElementById('details').innerHTML = commitsList;
 }
 
