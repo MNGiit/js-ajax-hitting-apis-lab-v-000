@@ -45,6 +45,6 @@ function displayCommits() {
 
 function displayBranches() {
   const branches = JSON.parse(this.responseText);
-  
+  console.log("Hello world!")
   //
 }
