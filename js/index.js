@@ -43,3 +43,8 @@ function displayCommits() {
   document.getElementById('details').innerHTML = showCommits;
 }
 
+function displayBranches() {
+  const branches = JSON.parse(this.responseText);
+  
+  //
+}
