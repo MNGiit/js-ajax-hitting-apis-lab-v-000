@@ -49,7 +49,8 @@ function getBranches(el) {
   // const uri = rootURL + '/repos/' + el.dataset.username + '/' + name + '/branches';
   const req = new XMLHttpRequest();
   req.addEventListener('load', displayBranches);
-  req.open('GET', 'https://api.github.com/repos/' + name + '/branches');
+  // expected: https://api.github.com/repos/octocat/Spoon-Knife/branches
+  req.open('GET', 'https://api.github.com/repos/' + el.dataset.username + '/' + name + '/branches');
   req.send();
 }
 function displayBranches() {
