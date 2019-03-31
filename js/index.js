@@ -1,7 +1,7 @@
 // your code here
 function getRepositories() {
   // get username
-  var user = document.getElementById('username').value;
+  let user = document.getElementById('username').value;
   const req = new XMLHttpRequest();
   // addEventListener
   req.addEventListener('load', showRepositories);
@@ -30,7 +30,7 @@ function getCommits(el) {
   const name = el.dataset.repo;
   const req = new XMLHttpRequest();
   req.addEventListener('load', showCommits);
-  req.open('GET', 'https://api.github.com/repos/' + user + '/commits');
+  req.open('GET', 'https://api.github.com/repos/' + name + '/commits');
   req.send();
 }
 
@@ -38,6 +38,10 @@ function getCommits(el) {
 //
 // 
 function displayCommits() {
-  
+  const name = el.dataset.repo;
+  const req = new XMLHttpRequest();
+  req.addEventListener('load', showCommits);
+  req.open('GET', 'https://api.github.com/repos/' + name + '/commits');
+  req.send();
 }
 
