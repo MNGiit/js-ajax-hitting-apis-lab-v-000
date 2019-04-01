@@ -10,7 +10,7 @@ function getRepositories() {
   req.send();
 }
 
-function diplayRepositories() {
+function displayRepositories() {
   var repos = JSON.parse(this.responseText);
   console.log(repos);
   const repoList = `<ul>${repos
