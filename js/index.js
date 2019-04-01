@@ -4,13 +4,13 @@ function getRepositories() {
   let user = document.getElementById('username').value;
   const req = new XMLHttpRequest();
   // addEventListener
-  req.addEventListener('load', showRepositories);
+  req.addEventListener('load', displayRepositories);
   // api url/users/user/repos
   req.open('GET', 'https://api.github.com/users/' + user + '/repos');
   req.send();
 }
 
-function showRepositories() {
+function diplayRepositories() {
   var repos = JSON.parse(this.responseText);
   console.log(repos);
   const repoList = `<ul>${repos
