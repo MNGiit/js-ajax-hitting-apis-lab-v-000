@@ -38,10 +38,8 @@ function displayRepositories() {
             <a href="${repo.html_url}">${repo.html_url}</a><br>
             <a href="#" ${repoName} ${userName} onclick="getCommits(this)">Get Commits</a><br>
             <a href="#" ${repoName} ${userName} onclick="getBranches(this)">Get Branches</a></li>
-          </li>`;
-      })
-      .join('') +
-    '</ul>';
+          </li>`;}).join('') + '</ul>';
+    
   document.getElementById('repositories').innerHTML = repoList;
 }
 
