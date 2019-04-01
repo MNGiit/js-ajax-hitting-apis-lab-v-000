@@ -31,7 +31,7 @@ function showRepositories() {
 function getCommits(el) {
   const name = el.dataset.repository;
   const req = new XMLHttpRequest();
-  req.addEventListener('load', displayCommits);
+  req.addEventListener('load',  displayCommits);
   // expected: https://api.github.com/repos/octocat/Spoon-Knife/commits
   req.open('GET', 'https://api.github.com/repos/' + el.dataset.username + '/' + name + '/commits');
   req.send();
